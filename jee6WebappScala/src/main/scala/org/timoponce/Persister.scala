@@ -14,13 +14,19 @@ class Persister {
 
   def persist(t: AnyRef) = {
     val results = entityManager.createQuery("SELECT t FROM Car t").getResultList
-
     println("saving ..." + results.size())
+    executeTransacted(entityManager.persist(t))
+  }
 
+  def executeTransacted[R](block: => R): R = {
     try {
       transaction.begin()
-      entityManager.persist(t)
-      entityManager.flush()
+      val result = block
+      return result
+    } catch {
+      case e: Exception =>
+        transaction.rollback()
+        throw new IllegalArgumentException("Something went wrong")
     } finally {
       transaction.commit()
     }
