@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+	<!-- Database configuration definition -->
+	<Resource id="helloDS" type="DataSource">
+		JdbcDriver = org.h2.Driver
+		JdbcUrl = jdbc:h2:~/.tmp/helloDS;AUTO_SERVER=TRUE;MVCC=TRUE
+		UserName = sa
+		Password =
+		LogSql = true
+	</Resource>	
+</tomee>
