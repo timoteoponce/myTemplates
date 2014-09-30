@@ -7,8 +7,7 @@
     <persistence-unit name="helloPU" transaction-type="JTA">
         <jta-data-source>java:openejb/Resource/helloDS</jta-data-source>
         <properties>
-            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>
-			<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>			
         </properties>
     </persistence-unit>
 
