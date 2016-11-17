@@ -1,0 +1,37 @@
+# Direct log messages to stdout
+log4j.appender.A1=org.apache.log4j.ConsoleAppender
+log4j.appender.A1.Target=System.out
+log4j.appender.A1.layout=org.apache.log4j.PatternLayout
+log4j.appender.A1.layout.ConversionPattern=%d{MMM dd HH:mm:ss} %-5p %c{1} %x - %m%n
+
+# reduce log verbosity
+log4j.logger.org.apache.commons=ERROR
+log4j.logger.com.screenfood.webobjects.base.BaJSONHandler=WARN
+log4j.logger.com.screenfood.webobjects.eo.Configuration=WARN
+log4j.logger.org.hibernate=ERROR
+#log4j.logger.org.hibernate.type=trace 
+log4j.logger.org.springframework=ERROR
+log4j.logger.com.zaxxer.hikari=ERROR
+log4j.logger.org.flywaydb=ERROR
+log4j.logger.de.medienwerft.jms=OFF
+log4j.logger.de.medienwerft=OFF
+log4j.logger.de.medienwerft.webobjects.eocontrol=OFF
+log4j.logger.de.medienwerft.webobjects.eocontrol.changenotification=WARN
+log4j.logger.net.sf.jmimemagic=ERROR
+log4j.logger.org.apache.http=ERROR
+log4j.logger.de.medienwerft.webobjects.eocontrol.changenotification.MWChangeObserver=WARN
+log4j.logger.com.screenfood.webobjects.base.BaDirectAction=INFO
+log4j.logger.com.screenfood.webobjects.base.BaIDManager=WARN
+log4j.logger.de.medienwerft.webobjects.eocontrol.changenotification.MWChangeObserverJGroups=WARN
+log4j.logger.de.medienwerft.webobjects.eocontrol.MWSharedEditingContext=WARN
+log4j.logger.org.apache.activemq.transport.InactivityMonitor=WARN
+log4j.logger.org.exolab=WARN
+log4j.logger.org.castor.core=WARN
+log4j.logger.er.extensions.remoteSynchronizer=WARN
+log4j.logger.org.jgroups.protocols.UDP=FATAL
+log4j.logger.org.apache.activemq=WARN
+log4j.logger.org.apache.activemq.transport=WARN
+#log4j.logger.org.springframework.jdbc.core=TRACE
+�
+# Root logger option
+log4j.rootLogger=ERROR, A1
